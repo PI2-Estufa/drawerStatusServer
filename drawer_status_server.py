@@ -7,8 +7,7 @@ class DrawerStatusServer():
     name = "drawer_status_server"
 
     @rpc
-    def receive_temperature(self, drawer_status):
-        drawer_status = round(drawer_status, 1)
+    def receive_drawer_status(self, drawer_status):
         d = DrawerStatus()
         d.value = drawer_status
         db.session.add(d)
