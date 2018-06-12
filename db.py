@@ -1,5 +1,5 @@
 import datetime 
-from sqlalchemy import create_engine, Column, Integer, Boolean, Unicode, Sequence, DateTime
+from sqlalchemy import create_engine, Column, Integer, Unicode, Sequence, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
@@ -16,7 +16,7 @@ class DrawerStatus(Base):
 
     id = Column(Integer, 
             Sequence('drawer_status_id_seq'), primary_key=True)
-    value = Column(Boolean)
+    value = Column(Integer)
     created_date = Column(DateTime, default=datetime.datetime.utcnow) 
 
 Base.metadata.create_all(engine)
