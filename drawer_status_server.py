@@ -11,6 +11,11 @@ class DrawerStatusServer():
         drawer_status = round(drawer_status, 1)
         d = DrawerStatus()
         d.value = drawer_status
-        db.session.add(d)
-        db.session.commit()
+        try:
+            db.session.add(d)
+            db.session.commit()
+        except:
+            db.session.rollback()
+        finally:
+            db.session.close()
         return drawer_status
