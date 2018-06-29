@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-engine = create_engine("postgresql://greenhouse:greenhouse@postgres:5432/greenhouse", echo=True)
+engine = create_engine("postgresql://greenhouse:greenhouse@postgres:5432/greenhouse", echo=False)
 Session = sessionmaker(bind=engine)
 session = Session()
 
